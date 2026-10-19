@@ -5,7 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="NEXUS PLAY: descubre novedades, recomendaciones y experiencias del mundo gamer.">
   <title>NEXUS PLAY | Tu próximo juego empieza aquí</title>
-  <!-- Después de crear tu contenedor, pega aquí el fragmento <head> de Google Tag Manager. -->
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-K7WB4ZKH');</script>
+  <!-- End Google Tag Manager -->
+
   <style>
     :root{--bg:#0b0b13;--panel:#151522;--text:#f4f3ff;--muted:#b9b8cc;--purple:#a78bfa;--pink:#fb7185;--line:#2b2a3b;--max:1120px}
     *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
@@ -38,6 +46,11 @@
   </style>
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K7WB4ZKH"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
   <!-- 1. HEADER -->
   <header>
     <nav class="wrap" aria-label="Navegación principal">
@@ -98,7 +111,7 @@
       </div>
     </section>
 
-    <!-- 6. TESTIMONIOS: reemplazar por opiniones reales si se usa como proyecto comercial -->
+    <!-- 6. TESTIMONIOS -->
     <section id="opiniones">
       <div class="wrap">
         <div class="section-head"><div class="eyebrow">Lo que buscamos</div><h2>Una experiencia hecha para gamers.</h2><p>Estos textos son ejemplos de diseño para el proyecto académico, no testimonios de clientes reales.</p></div>
@@ -131,12 +144,11 @@
       <div class="wrap prebox"><div><div class="eyebrow">¿Listo para el siguiente nivel?</div><h2>Únete a NEXUS PLAY.</h2><p>Recibe novedades y encuentra nuevas formas de disfrutar tus juegos favoritos.</p></div><a class="btn" href="#registro" data-gtm-event="click_cta">Quiero registrarme</a></div>
     </section>
 
-    <!-- Formulario provisional: se debe reemplazar por el embed real de HubSpot para cumplir el requisito CRM. -->
+    <!-- Formulario provisional: reemplázalo luego por el embed de HubSpot -->
     <section id="registro">
       <div class="wrap">
         <div class="section-head"><div class="eyebrow">Registro</div><h2>Recibe novedades gamer.</h2><p>Completa el formulario para mostrar el flujo de registro. Para guardar contactos en HubSpot, incrusta aquí el formulario oficial de tu cuenta.</p></div>
         <div class="form-shell">
-          <!-- PASO HUBSPOT: reemplaza este formulario por el código oficial de inserción de HubSpot. -->
           <form id="demo-form">
             <label for="name">Nombre</label><input id="name" name="name" autocomplete="given-name" required placeholder="Tu nombre">
             <label for="email">Correo electrónico</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="tu@correo.com">
@@ -144,7 +156,6 @@
             <p class="note">Formulario de demostración. No envía ni almacena datos todavía.</p>
             <p id="form-message" role="status" aria-live="polite"></p>
           </form>
-          <!-- Pega aquí el embed de HubSpot una vez creado. -->
         </div>
       </div>
     </section>
@@ -159,17 +170,16 @@
     </div>
   </footer>
 
-  <!-- Banner de cookies de demostración. Para producción, usa una solución de consentimiento compatible con las etiquetas y normativa aplicable. -->
+  <!-- Banner de cookies -->
   <aside class="cookie-banner" id="cookie-banner" aria-label="Preferencias de cookies">
     <p><strong>Tu privacidad importa.</strong> Esta página académica puede usar herramientas de medición cuando se configuren. Elige si aceptas las cookies opcionales.</p>
     <div class="cookie-actions"><button class="accept" id="accept-cookies">Aceptar opcionales</button><button id="reject-cookies">Rechazar opcionales</button></div>
   </aside>
 
-  <!-- Después de crear tu contenedor, pega aquí el fragmento <body> de Google Tag Manager. -->
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Eventos de demostración. Al configurar GTM, crea los activadores sobre los clics y eventos reales.
+    // Eventos dataLayer para Google Tag Manager
     document.querySelectorAll('[data-gtm-event]').forEach(function (el) {
       el.addEventListener('click', function () {
         window.dataLayer = window.dataLayer || [];
@@ -178,20 +188,23 @@
     });
 
     var form = document.getElementById('demo-form');
-    form.addEventListener('focusin', function () {
-      if (!form.dataset.started) {
-        form.dataset.started = 'true';
+    if (form) {
+      form.addEventListener('focusin', function () {
+        if (!form.dataset.started) {
+          form.dataset.started = 'true';
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({event: 'form_start'});
+        }
+      });
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        document.getElementById('form-message').textContent =
+          'Demostración completada. Conecta el formulario oficial de HubSpot para guardar registros.';
         window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({event: 'form_start'});
-      }
-    });
-    form.addEventListener('submit', function (event) {
-      event.preventDefault();
-      document.getElementById('form-message').textContent =
-        'Demostración completada. Conecta el formulario oficial de HubSpot para guardar registros.';
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({event: 'demo_form_submit'});
-    });
+        window.dataLayer.push({event: 'demo_form_submit'});
+      });
+    }
+
     document.querySelectorAll('.faq details').forEach(function (item) {
       item.addEventListener('toggle', function () {
         if (item.open) {
@@ -201,7 +214,7 @@
       });
     });
 
-    // Banner demostrativo; guardar la preferencia en el navegador. No activa/desactiva etiquetas por sí solo.
+    // Control Banner Cookies
     var banner = document.getElementById('cookie-banner');
     try {
       if (!localStorage.getItem('nexus-cookie-choice')) banner.style.display = 'block';
