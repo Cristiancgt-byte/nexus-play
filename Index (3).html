@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="NEXUS PLAY: descubre novedades, recomendaciones y experiencias del mundo gamer.">
+  <title>NEXUS PLAY | Tu próximo juego empieza aquí</title>
+  <!-- Después de crear tu contenedor, pega aquí el fragmento <head> de Google Tag Manager. -->
+  <style>
+    :root{--bg:#0b0b13;--panel:#151522;--text:#f4f3ff;--muted:#b9b8cc;--purple:#a78bfa;--pink:#fb7185;--line:#2b2a3b;--max:1120px}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none} button,input{font:inherit} .wrap{width:min(var(--max),92%);margin:auto}
+    header{position:sticky;top:0;z-index:20;background:#0b0b13ed;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:72px}.logo{font-weight:900;letter-spacing:.08em}.logo span{color:var(--purple)}
+    .links{display:flex;gap:22px;color:var(--muted);font-size:.92rem}.links a:hover{color:white}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 19px;border:0;border-radius:12px;background:linear-gradient(110deg,var(--purple),var(--pink));color:#11101a;font-weight:800;cursor:pointer;transition:transform .2s,filter .2s}.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+    .btn.secondary{background:transparent;color:var(--text);border:1px solid #57536f}.hero{padding:92px 0 78px;overflow:hidden;background:radial-gradient(ellipse at 80% 25%,#6d28d944,transparent 38%),radial-gradient(ellipse at 10% 80%,#be185d25,transparent 35%)}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center}.eyebrow{color:var(--purple);font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:.78rem}
+    h1{font-size:clamp(2.7rem,6vw,5rem);line-height:1.02;letter-spacing:-.05em;margin:14px 0 22px}h1 em{font-style:normal;color:var(--purple)}h2{font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.1;letter-spacing:-.03em;margin:8px 0 14px}
+    p{color:var(--muted)}.hero p{font-size:1.1rem;max-width:610px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .game-art{min-height:340px;border:1px solid #ffffff20;border-radius:28px;background:linear-gradient(145deg,#272044,#11111e 55%,#3c1642);padding:28px;display:flex;align-items:end;position:relative;overflow:hidden;box-shadow:0 25px 80px #0008}
+    .game-art:before{content:"";position:absolute;width:240px;height:240px;border:1px solid #c4b5fd70;border-radius:50%;top:30px;right:25px;box-shadow:0 0 0 28px #c4b5fd0b,0 0 0 56px #c4b5fd0b}
+    .controller{position:absolute;top:75px;left:50%;transform:translateX(-50%) rotate(-10deg);font-size:7rem;filter:drop-shadow(0 20px 30px #a78bfa88)}
+    .art-copy{position:relative}.art-copy strong{font-size:1.5rem}.art-copy small{display:block;color:#d4d0e9}
+    section{padding:76px 0}.section-head{max-width:680px;margin-bottom:30px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:24px}.card .emoji{font-size:1.8rem}.card h3{margin:12px 0 6px}.card p{margin:0}
+    .band{background:linear-gradient(110deg,#24163e,#191328);border-block:1px solid #3b2a56}.band-grid{display:grid;grid-template-columns:1fr auto;gap:25px;align-items:center}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.step-num{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:12px;background:#a78bfa22;color:var(--purple);font-weight:900}
+    .quote{font-size:1.05rem;color:var(--text)}.person{font-size:.9rem;color:var(--muted);margin-top:16px}
+    .faq details{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:10px 0}.faq summary{font-weight:750;cursor:pointer}.faq details p{margin-bottom:0}
+    .form-shell{background:var(--panel);border:1px solid var(--line);padding:26px;border-radius:20px;max-width:720px}.form-shell label{display:block;margin:14px 0 6px;font-weight:700}.form-shell input{width:100%;padding:12px;border-radius:10px;border:1px solid #46445b;background:#0d0d17;color:white}.form-shell .btn{margin-top:16px}.note{font-size:.85rem}
+    footer{border-top:1px solid var(--line);padding:32px 0}.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer-links{display:flex;gap:16px;color:var(--muted);font-size:.9rem}
+    .prefooter{padding:42px 0}.prebox{padding:32px;border-radius:22px;background:linear-gradient(110deg,#33205a,#4a183b);display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .cookie-banner{position:fixed;z-index:50;left:16px;right:16px;bottom:16px;max-width:760px;margin:auto;padding:18px;background:#191927;border:1px solid #51476c;border-radius:16px;box-shadow:0 15px 55px #0009;display:none}
+    .cookie-banner p{margin:0 0 12px;font-size:.9rem}.cookie-actions{display:flex;gap:10px;flex-wrap:wrap}.cookie-actions button{padding:8px 13px;border-radius:9px;border:1px solid #625b7c;background:transparent;color:white;cursor:pointer}.cookie-actions .accept{background:var(--purple);color:#141020;border:0;font-weight:800}
+    #form-message{margin-top:12px;color:#c4b5fd}.mobile-menu{display:none}
+    @media(max-width:780px){.hero-grid{grid-template-columns:1fr}.game-art{min-height:270px}.cards,.steps{grid-template-columns:1fr}.links{display:none}.band-grid{grid-template-columns:1fr}.prebox{align-items:flex-start;flex-direction:column}section{padding:56px 0}.hero{padding:65px 0}}
+  </style>
+</head>
+<body>
+  <!-- 1. HEADER -->
+  <header>
+    <nav class="wrap" aria-label="Navegación principal">
+      <a class="logo" href="#inicio" aria-label="NEXUS PLAY inicio">NEXUS<span>PLAY</span></a>
+      <div class="links">
+        <a href="#beneficios">Beneficios</a><a href="#como-funciona">Cómo funciona</a><a href="#opiniones">Opiniones</a><a href="#faq">FAQ</a>
+      </div>
+      <a class="btn" href="#registro" data-gtm-event="click_cta">Quiero novedades</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 2. HERO -->
+    <section class="hero" id="inicio">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Tu próximo nivel empieza aquí</div>
+          <h1>El universo gamer, <em>en un solo lugar.</em></h1>
+          <p>Descubre recomendaciones, próximos lanzamientos y novedades para encontrar tu siguiente gran aventura. Menos búsqueda, más juego.</p>
+          <div class="actions">
+            <a class="btn" href="#registro" data-gtm-event="click_cta">Únete a la comunidad</a>
+            <a class="btn secondary" href="#beneficios">Descubrir beneficios</a>
+          </div>
+        </div>
+        <div class="game-art" role="img" aria-label="Ilustración decorativa inspirada en videojuegos">
+          <div class="controller" aria-hidden="true">🎮</div>
+          <div class="art-copy"><strong>READY PLAYER?</strong><small>Noticias · Recomendaciones · Comunidad</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. BENEFICIOS -->
+    <section id="beneficios">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">¿Por qué NEXUS PLAY?</div><h2>Todo lo que buscas para jugar mejor.</h2><p>Un espacio pensado para quienes disfrutan explorar nuevos mundos, descubrir joyas ocultas y mantenerse al día.</p></div>
+        <div class="cards">
+          <article class="card"><div class="emoji">🚀</div><h3>Novedades primero</h3><p>Entérate de anuncios, actualizaciones y lanzamientos destacados.</p></article>
+          <article class="card"><div class="emoji">🕹️</div><h3>Encuentra tu próximo juego</h3><p>Recomendaciones para distintos gustos, géneros y estilos de juego.</p></article>
+          <article class="card"><div class="emoji">💜</div><h3>Una comunidad gamer</h3><p>Comparte intereses y descubre experiencias que vale la pena probar.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. CTA -->
+    <section class="band">
+      <div class="wrap band-grid"><div><div class="eyebrow">No te quedes por fuera</div><h2>Tu próxima aventura te está esperando.</h2><p>Regístrate para recibir novedades y recomendaciones.</p></div><a class="btn" href="#registro" data-gtm-event="click_cta_2">Quiero unirme</a></div>
+    </section>
+
+    <!-- 5. EXPLICACIÓN -->
+    <section id="como-funciona">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">Así de fácil</div><h2>De la curiosidad a la partida.</h2><p>Un proceso sencillo para que dediques más tiempo a jugar y menos a buscar.</p></div>
+        <div class="steps">
+          <article class="card"><span class="step-num">01</span><h3>Regístrate</h3><p>Déjanos tus datos en el formulario de la página.</p></article>
+          <article class="card"><span class="step-num">02</span><h3>Recibe novedades</h3><p>Conoce noticias y recomendaciones de videojuegos.</p></article>
+          <article class="card"><span class="step-num">03</span><h3>Elige tu aventura</h3><p>Explora opciones y encuentra algo nuevo para jugar.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. TESTIMONIOS: reemplazar por opiniones reales si se usa como proyecto comercial -->
+    <section id="opiniones">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">Lo que buscamos</div><h2>Una experiencia hecha para gamers.</h2><p>Estos textos son ejemplos de diseño para el proyecto académico, no testimonios de clientes reales.</p></div>
+        <div class="cards">
+          <article class="card"><div class="quote">“Me gustaría descubrir juegos que no aparecen siempre en las listas de moda.”</div><div class="person">— Perfil de jugador explorador · ejemplo</div></article>
+          <article class="card"><div class="quote">“Una página clara me ayuda a encontrar novedades sin perder tiempo.”</div><div class="person">— Perfil de jugador casual · ejemplo</div></article>
+          <article class="card"><div class="quote">“Las recomendaciones por género hacen más fácil elegir qué jugar.”</div><div class="person">— Perfil de jugador multiplataforma · ejemplo</div></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. CTA 2 -->
+    <section class="band">
+      <div class="wrap band-grid"><div><div class="eyebrow">La comunidad te espera</div><h2>Haz espacio para tu siguiente juego favorito.</h2><p>Déjanos tus datos y mantente al tanto.</p></div><a class="btn" href="#registro" data-gtm-event="click_cta_2">Registrarme ahora</a></div>
+    </section>
+
+    <!-- 8. FAQ -->
+    <section id="faq" class="faq">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">Preguntas frecuentes</div><h2>Resolvamos tus dudas.</h2></div>
+        <details><summary>¿NEXUS PLAY vende videojuegos?</summary><p>En esta versión académica, NEXUS PLAY es una página informativa ficticia de recomendaciones y novedades; no procesa ventas.</p></details>
+        <details><summary>¿Tengo que pagar para registrarme?</summary><p>No. El formulario del proyecto es gratuito y sirve para demostrar la captación de contactos.</p></details>
+        <details><summary>¿Qué tipo de juegos encontraré?</summary><p>La idea es incluir distintos géneros y plataformas, desde aventura y acción hasta terror, estrategia e independientes.</p></details>
+        <details><summary>¿Cómo puedo dejar una opinión sobre la página?</summary><p>Usa la encuesta de feedback cuando esté configurada con Contentsquare.</p></details>
+      </div>
+    </section>
+
+    <!-- 9. PRE-FOOTER -->
+    <section class="prefooter">
+      <div class="wrap prebox"><div><div class="eyebrow">¿Listo para el siguiente nivel?</div><h2>Únete a NEXUS PLAY.</h2><p>Recibe novedades y encuentra nuevas formas de disfrutar tus juegos favoritos.</p></div><a class="btn" href="#registro" data-gtm-event="click_cta">Quiero registrarme</a></div>
+    </section>
+
+    <!-- Formulario provisional: se debe reemplazar por el embed real de HubSpot para cumplir el requisito CRM. -->
+    <section id="registro">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">Registro</div><h2>Recibe novedades gamer.</h2><p>Completa el formulario para mostrar el flujo de registro. Para guardar contactos en HubSpot, incrusta aquí el formulario oficial de tu cuenta.</p></div>
+        <div class="form-shell">
+          <!-- PASO HUBSPOT: reemplaza este formulario por el código oficial de inserción de HubSpot. -->
+          <form id="demo-form">
+            <label for="name">Nombre</label><input id="name" name="name" autocomplete="given-name" required placeholder="Tu nombre">
+            <label for="email">Correo electrónico</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="tu@correo.com">
+            <button class="btn" type="submit">Quiero recibir novedades</button>
+            <p class="note">Formulario de demostración. No envía ni almacena datos todavía.</p>
+            <p id="form-message" role="status" aria-live="polite"></p>
+          </form>
+          <!-- Pega aquí el embed de HubSpot una vez creado. -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 10. FOOTER -->
+  <footer>
+    <div class="wrap footer-row">
+      <div><a class="logo" href="#inicio">NEXUS<span>PLAY</span></a><p class="note">Proyecto académico de Landing Page y analítica digital.</p></div>
+      <div class="footer-links"><a href="#beneficios">Beneficios</a><a href="#faq">Preguntas frecuentes</a><a href="#registro">Contacto</a></div>
+      <div class="note">© <span id="year"></span> NEXUS PLAY</div>
+    </div>
+  </footer>
+
+  <!-- Banner de cookies de demostración. Para producción, usa una solución de consentimiento compatible con las etiquetas y normativa aplicable. -->
+  <aside class="cookie-banner" id="cookie-banner" aria-label="Preferencias de cookies">
+    <p><strong>Tu privacidad importa.</strong> Esta página académica puede usar herramientas de medición cuando se configuren. Elige si aceptas las cookies opcionales.</p>
+    <div class="cookie-actions"><button class="accept" id="accept-cookies">Aceptar opcionales</button><button id="reject-cookies">Rechazar opcionales</button></div>
+  </aside>
+
+  <!-- Después de crear tu contenedor, pega aquí el fragmento <body> de Google Tag Manager. -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Eventos de demostración. Al configurar GTM, crea los activadores sobre los clics y eventos reales.
+    document.querySelectorAll('[data-gtm-event]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({event: el.getAttribute('data-gtm-event')});
+      });
+    });
+
+    var form = document.getElementById('demo-form');
+    form.addEventListener('focusin', function () {
+      if (!form.dataset.started) {
+        form.dataset.started = 'true';
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({event: 'form_start'});
+      }
+    });
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      document.getElementById('form-message').textContent =
+        'Demostración completada. Conecta el formulario oficial de HubSpot para guardar registros.';
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({event: 'demo_form_submit'});
+    });
+    document.querySelectorAll('.faq details').forEach(function (item) {
+      item.addEventListener('toggle', function () {
+        if (item.open) {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({event: 'faq_click'});
+        }
+      });
+    });
+
+    // Banner demostrativo; guardar la preferencia en el navegador. No activa/desactiva etiquetas por sí solo.
+    var banner = document.getElementById('cookie-banner');
+    try {
+      if (!localStorage.getItem('nexus-cookie-choice')) banner.style.display = 'block';
+      ['accept-cookies','reject-cookies'].forEach(function (id) {
+        document.getElementById(id).addEventListener('click', function () {
+          localStorage.setItem('nexus-cookie-choice', id === 'accept-cookies' ? 'accepted' : 'rejected');
+          banner.style.display = 'none';
+        });
+      });
+    } catch (e) {
+      banner.style.display = 'block';
+      document.getElementById('accept-cookies').addEventListener('click', function(){banner.style.display='none';});
+      document.getElementById('reject-cookies').addEventListener('click', function(){banner.style.display='none';});
+    }
+  </script>
+</body>
+</html>
